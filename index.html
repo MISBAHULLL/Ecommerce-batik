@@ -47,31 +47,31 @@
             <div class="container">
                 <div class="row text-center">
                     <div class="col-md-3 col-6 mb-4">
-                        <div class="stat-item">
+                        <div class="stat-item fade-in" data-aos="fade-up" data-aos-delay="100">
                             <i class="bi bi-people-fill display-4 mb-3"></i>
-                            <h3>1000+</h3>
-                            <p class="text-muted">Pelanggan Puas</p>
+                            <h3 class="counter" data-target="1000">0</h3>
+                            <p>Pelanggan Puas</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-6 mb-4">
-                        <div class="stat-item">
+                        <div class="stat-item fade-in" data-aos="fade-up" data-aos-delay="200">
                             <i class="bi bi-bag-check-fill display-4 mb-3"></i>
-                            <h3>500+</h3>
-                            <p class="text-muted">Produk Terjual</p>
+                            <h3 class="counter" data-target="500">0</h3>
+                            <p>Produk Terjual</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-6 mb-4">
-                        <div class="stat-item">
+                        <div class="stat-item fade-in" data-aos="fade-up" data-aos-delay="300">
                             <i class="bi bi-geo-alt-fill display-4 mb-3"></i>
-                            <h3>15+</h3>
-                            <p class="text-muted">Daerah Asal</p>
+                            <h3 class="counter" data-target="15">0</h3>
+                            <p>Daerah Asal</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-6 mb-4">
-                        <div class="stat-item">
+                        <div class="stat-item fade-in" data-aos="fade-up" data-aos-delay="400">
                             <i class="bi bi-star-fill display-4 mb-3"></i>
-                            <h3>4.8</h3>
-                            <p class="text-muted">Rating Produk</p>
+                            <h3 class="counter" data-target="4.8">0</h3>
+                            <p>Rating Produk</p>
                         </div>
                     </div>
                 </div>
@@ -82,8 +82,11 @@
         <section class="py-5">
             <div class="container">
                 <div class="text-center mb-5">
-                    <h2 class="display-5 fw-bold">Produk Unggulan</h2>
+                    <h2 class="display-5 fw-bold gradient-text">Produk Unggulan</h2>
                     <p class="lead text-muted">Koleksi terbaik batik Indonesia pilihan kami</p>
+                    <div class="d-flex justify-content-center">
+                        <div style="width: 100px; height: 4px; background: var(--primary-gradient); border-radius: 2px;"></div>
+                    </div>
                 </div>
                 
                 <!-- Container untuk scroll horizontal -->
@@ -105,8 +108,8 @@
         <section class="py-5 bg-light">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 mb-4 mb-lg-0">
-                        <h2 class="display-6 fw-bold mb-4">Tentang Batik Indonesia</h2>
+                    <div class="col-lg-6 mb-4 mb-lg-0 fade-in-left">
+                        <h2 class="display-6 fw-bold mb-4 gradient-text">Tentang Batik Indonesia</h2>
                         <p class="lead">
                             Batik adalah warisan budaya Indonesia yang telah diakui UNESCO 
                             sebagai Masterpiece of Oral and Intangible Heritage of Humanity.
@@ -142,8 +145,11 @@
                             <i class="bi bi-arrow-right me-2"></i>Pelajari Lebih Lanjut
                         </a>
                     </div>
-                    <div class="col-lg-6">
-                        <img src="Foto/pembuatan batik.jpg" class="img-fluid rounded shadow" alt="Proses Pembuatan Batik">
+                    <div class="col-lg-6 fade-in-right">
+                        <div class="position-relative">
+                            <img src="Foto/pembuatan batik.jpg" class="img-fluid rounded shadow-modern-xl" alt="Proses Pembuatan Batik">
+                            <div class="position-absolute top-0 start-0 w-100 h-100 rounded" style="background: linear-gradient(45deg, rgba(102, 126, 234, 0.1), transparent);"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -171,6 +177,12 @@
             
             // Load produk unggulan
             loadFeaturedProducts();
+            
+            // Initialize animations
+            initAnimations();
+            
+            // Initialize counter animation
+            initCounters();
         });
 
         // Back to top functionality
@@ -192,10 +204,15 @@
             const container = document.getElementById('featuredProducts');
             const featuredProducts = window.productsData.slice(0, 5);
             
-            const productsHTML = featuredProducts.map(product => `
-                <div class="product-card">
-                    <div class="card h-100">
-                        <img src="${product.image}" class="card-img-top" alt="${product.name}">
+            const productsHTML = featuredProducts.map((product, index) => `
+                <div class="product-card" style="animation-delay: ${index * 0.1}s">
+                    <div class="card h-100 shadow-modern">
+                        <div class="position-relative overflow-hidden">
+                            <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                            <div class="position-absolute top-0 end-0 m-3">
+                                <span class="badge bg-primary">Unggulan</span>
+                            </div>
+                        </div>
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">${product.name}</h5>
                             <p class="card-text flex-grow-1">${product.description}</p>
@@ -225,6 +242,64 @@
         // Fungsi untuk menambah produk ke keranjang
         function addToCart(productId) {
             window.cart.addToCart(productId, 1);
+        }
+        
+        // Initialize animations
+        function initAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.8s ease-out';
+                observer.observe(el);
+            });
+        }
+        
+        // Initialize counter animation
+        function initCounters() {
+            const counters = document.querySelectorAll('.counter');
+            
+            const observerOptions = {
+                threshold: 0.5
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseFloat(counter.getAttribute('data-target'));
+                        const increment = target / 100;
+                        let current = 0;
+                        
+                        const updateCounter = () => {
+                            if (current < target) {
+                                current += increment;
+                                if (current > target) current = target;
+                                counter.textContent = target % 1 === 0 ? Math.floor(current) + '+' : current.toFixed(1);
+                                requestAnimationFrame(updateCounter);
+                            }
+                        };
+                        
+                        updateCounter();
+                        observer.unobserve(counter);
+                    }
+                });
+            }, observerOptions);
+            
+            counters.forEach(counter => observer.observe(counter));
         }
     </script>
 </body>

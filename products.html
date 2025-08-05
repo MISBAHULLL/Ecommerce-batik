@@ -130,19 +130,26 @@
             
             noProductsMessage.style.display = 'none';
             
-            const productsHTML = products.map(product => `
+            const productsHTML = products.map((product, index) => `
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                    <div class="card h-100 shadow-modern" style="animation-delay: ${index * 0.1}s">
+                        <div class="position-relative overflow-hidden">
+                            <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                            <div class="position-absolute top-0 start-0 m-3">
+                                <span class="badge glass text-white">${product.category}</span>
+                            </div>
+                            <div class="position-absolute bottom-0 end-0 m-3">
+                                <button class="btn btn-light btn-sm rounded-circle" onclick="toggleWishlist(${product.id})" title="Tambah ke Wishlist">
+                                    <i class="bi bi-heart"></i>
+                                </button>
+                            </div>
+                        </div>
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">${product.name}</h5>
                             <p class="card-text flex-grow-1">${product.description}</p>
                             <div class="mt-auto">
                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                     <span class="price-tag">${formatPrice(product.price)}</span>
-                                    <small class="text-muted">${product.category}</small>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
                                     <div class="rating">
                                         <i class="bi bi-star-fill"></i>
                                         <i class="bi bi-star-fill"></i>
@@ -150,8 +157,10 @@
                                         <i class="bi bi-star-fill"></i>
                                         <i class="bi bi-star-fill"></i>
                                     </div>
+                                </div>
+                                <div class="d-grid gap-2">
                                     <button class="btn btn-primary" onclick="addToCart(${product.id})">
-                                        <i class="bi bi-cart-plus me-1"></i>Tambah
+                                        <i class="bi bi-cart-plus me-2"></i>Tambah ke Keranjang
                                     </button>
                                 </div>
                             </div>
@@ -200,6 +209,41 @@
         // Tambah ke keranjang
         function addToCart(productId) {
             window.cart.addToCart(productId, 1);
+        }
+        
+        // Toggle wishlist (placeholder function)
+        function toggleWishlist(productId) {
+            const button = event.target.closest('button');
+            const icon = button.querySelector('i');
+            
+            if (icon.classList.contains('bi-heart')) {
+                icon.classList.remove('bi-heart');
+                icon.classList.add('bi-heart-fill');
+                button.classList.add('text-danger');
+                // Simulasi notifikasi
+                showNotification('Ditambahkan ke wishlist!');
+            } else {
+                icon.classList.remove('bi-heart-fill');
+                icon.classList.add('bi-heart');
+                button.classList.remove('text-danger');
+                showNotification('Dihapus dari wishlist!');
+            }
+        }
+        
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'alert alert-success position-fixed';
+            notification.style.cssText = 'top: 100px; right: 20px; z-index: 9999; min-width: 300px;';
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                if (document.body.contains(notification)) {
+                    document.body.removeChild(notification);
+                }
+            }, 3000);
         }
     </script>
 </body>
