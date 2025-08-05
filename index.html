@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batik Indonesia - Batik Tradisional Indonesia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Toko online batik Indonesia terpercaya dengan koleksi batik tradisional dan modern berkualitas tinggi dari berbagai daerah.">
+    <meta name="keywords" content="batik indonesia, batik online, batik tradisional, batik modern, toko batik">
+    <meta name="author" content="Batik Indonesia">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Batik Indonesia - Batik Tradisional Indonesia">
+    <meta property="og:description" content="Toko online batik Indonesia terpercaya dengan koleksi batik tradisional dan modern berkualitas tinggi.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://batikindonesia.com">
+    <meta property="og:image" content="Foto/batik_beranda.jpg">
+</head>
+<body>
+    <!-- Navigasi -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-flower1 me-2"></i>Batik Indonesia
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="bi bi-house-door me-1"></i>Beranda
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="bi bi-info-circle me-1"></i>Tentang Batik
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">
+                            <i class="bi bi-grid me-1"></i>Produk
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="regions.html">
+                            <i class="bi bi-geo-alt me-1"></i>Daerah
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope me-1"></i>Kontak
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">
+                            <i class="bi bi-person me-1"></i>Login
+                        </a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center ms-3">
+                    <a href="cart.html" class="btn btn-outline-light position-relative">
+                        <i class="bi bi-cart3"></i>
+                        <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h1 class="display-4 fw-bold mb-4">Temukan Keindahan Batik Indonesia</h1>
+                        <p class="lead mb-4">Koleksi batik berkualitas tinggi dengan motif tradisional dan modern untuk berbagai kesempatan. Dibuat oleh pengrajin terbaik Indonesia.</p>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a href="products.html" class="btn btn-primary btn-lg">
+                                <i class="bi bi-bag me-2"></i>Belanja Sekarang
+                            </a>
+                            <a href="about.html" class="btn btn-outline-primary btn-lg">
+                                <i class="bi bi-info-circle me-2"></i>Pelajari Lebih Lanjut
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner rounded-4 shadow-lg">
+                                <div class="carousel-item active">
+                                    <img src="Foto/batik_beranda.jpg" class="d-block w-100" alt="Koleksi Batik Indonesia Terbaik">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Batik Berkualitas Tinggi</h5>
+                                        <p>Koleksi batik terbaik dari seluruh Indonesia</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Foto/carousel 2.jpg" class="d-block w-100" alt="Batik Tradisional Indonesia">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Motif Tradisional</h5>
+                                        <p>Melestarikan warisan budaya Indonesia</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="Foto/carousel 3.jpg" class="d-block w-100" alt="Batik Modern Indonesia">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Desain Modern</h5>
+                                        <p>Batik dengan sentuhan kontemporer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="stats-section py-5 bg-light">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="stat-item">
+                            <i class="bi bi-people-fill display-4 text-primary mb-3"></i>
+                            <h3 class="fw-bold">1000+</h3>
+                            <p class="text-muted">Pelanggan Puas</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="stat-item">
+                            <i class="bi bi-bag-check-fill display-4 text-primary mb-3"></i>
+                            <h3 class="fw-bold">500+</h3>
+                            <p class="text-muted">Produk Terjual</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="stat-item">
+                            <i class="bi bi-geo-alt-fill display-4 text-primary mb-3"></i>
+                            <h3 class="fw-bold">15+</h3>
+                            <p class="text-muted">Daerah Asal</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="stat-item">
+                            <i class="bi bi-star-fill display-4 text-primary mb-3"></i>
+                            <h3 class="fw-bold">4.8</h3>
+                            <p class="text-muted">Rating Produk</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="featured-products py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold">Produk Unggulan</h2>
+                    <p class="lead text-muted">Koleksi terbaik batik Indonesia pilihan kami</p>
+                </div>
+                
+                <div class="products-scroll-container">
+                    <div class="products-wrapper">
+                        <!-- Produk 1 -->
+                        <div class="product-card">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <img src="Foto/batik_beranda.jpg" class="card-img-top" alt="Batik Solo">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Batik Solo</h5>
+                                    <p class="card-text flex-grow-1">Batik Solo dengan motif tradisional yang elegan, dibuat dengan teknik canting tulis.</p>
+                                    <div class="mt-auto">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <span class="price-tag">Rp 450.000</span>
+                                            <div class="rating">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary w-100 view-detail" data-product-id="1">
+                                            <i class="bi bi-eye me-2"></i>Lihat Detail
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Produk 2 -->
+                        <div class="product-card">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <img src="Foto/dress yogyakarta.jpg" class="card-img-top" alt="Batik Yogyakarta">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Batik Yogyakarta</h5>
+                                    <p class="card-text flex-grow-1">Batik Yogyakarta dengan motif keraton yang megah, cocok untuk acara formal.</p>
+                                    <div class="mt-auto">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <span class="price-tag">Rp 550.000</span>
+                                            <div class="rating">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star text-warning"></i>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary w-100 view-detail" data-product-id="2">
+                                            <i class="bi bi-eye me-2"></i>Lihat Detail
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Produk 3 -->
+                        <div class="product-card">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <img src="Foto/batik pekalongan.jpg" class="card-img-top" alt="Batik Pekalongan">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Batik Pekalongan</h5>
+                                    <p class="card-text flex-grow-1">Batik Pekalongan dengan warna-warna cerah dan motif modern yang eye-catching.</p>
+                                    <div class="mt-auto">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <span class="price-tag">Rp 400.000</span>
+                                            <div class="rating">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary w-100 view-detail" data-product-id="3">
+                                            <i class="bi bi-eye me-2"></i>Lihat Detail
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Produk 4 -->
+                        <div class="product-card">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <img src="Foto/batik mega mendung.jpg" class="card-img-top" alt="Batik Cirebon">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Batik Mega Mendung</h5>
+                                    <p class="card-text flex-grow-1">Batik Cirebon dengan motif mega mendung yang ikonik dan penuh makna filosofis.</p>
+                                    <div class="mt-auto">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <span class="price-tag">Rp 850.000</span>
+                                            <div class="rating">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-half text-warning"></i>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary w-100 view-detail" data-product-id="4">
+                                            <i class="bi bi-eye me-2"></i>Lihat Detail
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Produk 5 -->
+                        <div class="product-card">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <img src="Foto/batik madura.jpg" class="card-img-top" alt="Batik Madura">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Batik Madura Premium</h5>
+                                    <p class="card-text flex-grow-1">Batik Madura dengan warna-warna berani dan eksotis yang memukau mata.</p>
+                                    <div class="mt-auto">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <span class="price-tag">Rp 650.000</span>
+                                            <div class="rating">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star text-warning"></i>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary w-100 view-detail" data-product-id="5">
+                                            <i class="bi bi-eye me-2"></i>Lihat Detail
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <a href="products.html" class="btn btn-outline-primary btn-lg">
+                        <i class="bi bi-grid me-2"></i>Lihat Semua Produk
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section py-5 bg-light">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h2 class="display-6 fw-bold mb-4">Tentang Batik Indonesia</h2>
+                        <p class="lead">Batik adalah warisan budaya Indonesia yang telah diakui UNESCO sebagai Masterpiece of Oral and Intangible Heritage of Humanity.</p>
+                        <p>Kami berkomitmen untuk melestarikan dan mengembangkan seni batik Indonesia dengan menyediakan produk berkualitas tinggi yang dibuat oleh pengrajin terbaik dari berbagai daerah di Indonesia.</p>
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-circle-fill text-success me-3 fs-4"></i>
+                                    <span>Kualitas Terjamin</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-check-circle-fill text-success me-3 fs-4"></i>
+                                    <span>Pengrajin Berpengalaman</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-circle-fill text-success me-3 fs-4"></i>
+                                    <span>Motif Autentik</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-check-circle-fill text-success me-3 fs-4"></i>
+                                    <span>Harga Terjangkau</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="about.html" class="btn btn-outline-primary mt-4">
+                            <i class="bi bi-arrow-right me-2"></i>Pelajari Lebih Lanjut
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="Foto/pembuatan batik.jpg" class="img-fluid rounded-4 shadow-lg" alt="Proses Pembuatan Batik">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section py-5 bg-primary text-white">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-6">
+                        <h3 class="mb-3">Dapatkan Update Terbaru</h3>
+                        <p class="mb-4">Berlangganan newsletter kami untuk mendapatkan informasi produk terbaru dan penawaran khusus.</p>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Masukkan email Anda" aria-label="Email">
+                            <button class="btn btn-light" type="button">
+                                <i class="bi bi-send me-2"></i>Berlangganan
+                            </button>
+                        </div>
+                        <small class="text-light opacity-75">Kami menghargai privasi Anda dan tidak akan mengirim spam.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="bi bi-flower1 me-2"></i>Batik Indonesia
+                    </h5>
+                    <p class="mb-3">Melestarikan warisan batik Indonesia melalui produk berkualitas tinggi dan pendidikan budaya untuk generasi mendatang.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-twitter fs-5"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-youtube fs-5"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Navigasi</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-light text-decoration-none">Beranda</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-light text-decoration-none">Tentang Batik</a></li>
+                        <li class="mb-2"><a href="products.html" class="text-light text-decoration-none">Produk</a></li>
+                        <li class="mb-2"><a href="regions.html" class="text-light text-decoration-none">Daerah</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-light text-decoration-none">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Kategori Produk</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Batik Solo</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Batik Yogyakarta</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Batik Pekalongan</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Batik Cirebon</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Batik Madura</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h6 class="fw-bold mb-3">Hubungi Kami</h6>
+                    <div class="contact-info mb-2">
+                        <i class="bi bi-geo-alt me-2"></i>
+                        <span>Jl. Batik Indonesia No. 123, Jakarta</span>
+                    </div>
+                    <div class="contact-info mb-2">
+                        <i class="bi bi-telephone me-2"></i>
+                        <span>+62 21 1234 5678</span>
+                    </div>
+                    <div class="contact-info mb-2">
+                        <i class="bi bi-envelope me-2"></i>
+                        <span>info@batikindonesia.com</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="bi bi-clock me-2"></i>
+                        <span>Senin - Sabtu: 09:00 - 18:00</span>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Batik Indonesia. Semua hak dilindungi.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-light text-decoration-none me-3">Kebijakan Privasi</a>
+                    <a href="#" class="text-light text-decoration-none">Syarat & Ketentuan</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle" style="display: none; z-index: 1000;">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Back to top functionality
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Update cart count
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const cartCountElement = document.getElementById('cartCount');
+            
+            if (totalItems > 0) {
+                cartCountElement.textContent = totalItems;
+                cartCountElement.style.display = 'block';
+            } else {
+                cartCountElement.style.display = 'none';
+            }
+        }
+
+        // Initialize cart count on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+        });
+
+        // Product detail modal functionality
+        const products = {
+            1: {
+                title: "Batik Solo",
+                description: "Batik Solo dengan motif tradisional yang elegan, dibuat dengan teknik canting tulis. Menggunakan bahan katun berkualitas tinggi dan pewarna alami yang tahan lama.",
+                price: "Rp 450.000",
+                image: "Foto/batik_beranda.jpg"
+            },
+            2: {
+                title: "Batik Yogyakarta", 
+                description: "Batik Yogyakarta dengan motif keraton yang megah, cocok untuk acara formal. Dibuat dengan teknik tulis yang detail dan menggunakan bahan berkualitas tinggi.",
+                price: "Rp 550.000",
+                image: "Foto/dress yogyakarta.jpg"
+            },
+            3: {
+                title: "Batik Pekalongan",
+                description: "Batik Pekalongan dengan warna-warna cerah dan motif modern yang eye-catching. Menggabungkan teknik tradisional dengan desain kontemporer.",
+                price: "Rp 400.000", 
+                image: "Foto/batik pekalongan.jpg"
+            },
+            4: {
+                title: "Batik Mega Mendung",
+                description: "Batik Cirebon dengan motif mega mendung yang ikonik, menggambarkan awan mendung dengan gradasi warna yang indah.",
+                price: "Rp 850.000",
+                image: "Foto/batik mega mendung.jpg"
+            },
+            5: {
+                title: "Batik Madura Premium",
+                description: "Batik Madura dengan warna-warna berani dan eksotis, mencerminkan semangat dan karakter masyarakat Madura.",
+                price: "Rp 650.000",
+                image: "Foto/batik madura.jpg"
+            }
+        };
+
+        // View detail functionality
+        document.querySelectorAll('.view-detail').forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = this.getAttribute('data-product-id');
+                const product = products[productId];
+                
+                // For now, just redirect to products page
+                // In a real app, you'd show a modal or redirect to product detail page
+                alert(`Melihat detail untuk: ${product.title}\nHarga: ${product.price}\n\nFitur ini akan mengarahkan ke halaman detail produk.`);
+            });
+        });
+    </script>
+</body>
+</html>

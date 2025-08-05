@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang - Batik Indonesia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Notification Container -->
+    <div id="notificationContainer"></div>
+
+    <!-- Navigasi -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Batik Indonesia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Tentang Batik</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="regions.html">Daerah</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Kontak</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="cart.html" class="btn btn-outline-light position-relative me-2 active">
+                        <i class="bi bi-cart"></i>
+                        <span class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            0
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Content -->
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Keranjang Belanja</h1>
+        
+        <div id="cartItems">
+            <!-- Cart items will be displayed here -->
+        </div>
+
+        <div id="cartEmpty" class="text-center py-5" style="display: none;">
+            <i class="bi bi-cart-x" style="font-size: 4rem; color: #ccc;"></i>
+            <h3 class="mt-3">Keranjang Belanja Kosong</h3>
+            <p class="text-muted">Silakan tambahkan produk ke keranjang Anda</p>
+            <a href="products.html" class="btn btn-primary mt-3">Lihat Produk</a>
+        </div>
+
+        <div id="cartSummary" class="card mt-4" style="display: none;">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Ringkasan Belanja</h4>
+                <div class="d-flex justify-content-between mb-3">
+                    <span>Total Barang:</span>
+                    <span id="totalItems">0 item</span>
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                    <span>Total Harga:</span>
+                    <span id="cartTotal">Rp 0</span>
+                </div>
+                <button class="btn btn-primary w-100 mt-3" onclick="window.location.href='checkout.html'">
+                    Lanjut ke Pembayaran
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Batik Indonesia</h5>
+                    <p>Melestarikan warisan batik Indonesia melalui produk berkualitas dan pendidikan.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Tautan Cepat</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-white">Tentang Kami</a></li>
+                        <li><a href="products.html" class="text-white">Produk</a></li>
+                        <li><a href="contact.html" class="text-white">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Hubungi Kami</h5>
+                    <p>Email: info@batikindonesia.com<br>
+                    Telepon: +62 123 456 7890</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/cart-page.js"></script>
+</body>
+</html> 
