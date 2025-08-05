@@ -1,157 +1,202 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Batik Indonesia</title>
+    <title>Kontak - Batik Indonesia</title>
+    
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigasi -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Batik Indonesia</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">Tentang Batik</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="products.html">Produk</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="regions.html">Daerah</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="contact.html">Kontak</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
 
-    <!-- Formulir Kontak -->
-    <div class="container my-5">
-        <div class="row">
-            <div class="col-lg-6">
-                <h1 class="mb-4">Contact Us</h1>
-                <p class="lead">Have questions about our products or need assistance? We're here to help!</p>
-                
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Contact Information</h5>
-                        <p class="card-text">
-                            <strong>Address:</strong><br>
-                            Jl. Batik No. 123<br>
-                            Surakarta, Central Java<br>
-                            Indonesia 57100
-                        </p>
-                        <p class="card-text">
-                            <strong>Phone:</strong> +62 123 456 7890<br>
-                            <strong>Email:</strong> info@batikindonesia.com
-                        </p>
-                        <p class="card-text">
-                            <strong>Business Hours:</strong><br>
-                            Monday - Friday: 9:00 AM - 5:00 PM<br>
-                            Saturday: 10:00 AM - 3:00 PM<br>
-                            Sunday: Closed
-                        </p>
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Contact Content -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <!-- Contact Form -->
+                    <div class="col-lg-8 mb-5">
+                        <div class="card border-0 shadow">
+                            <div class="card-body p-5">
+                                <h3 class="card-title mb-4">Kirim Pesan</h3>
+                                <form id="contactForm">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="firstName" class="form-label">Nama Depan *</label>
+                                            <input type="text" class="form-control" id="firstName" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="lastName" class="form-label">Nama Belakang *</label>
+                                            <input type="text" class="form-control" id="lastName" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="email" class="form-label">Email *</label>
+                                            <input type="email" class="form-control" id="email" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="phone" class="form-label">Nomor Telepon</label>
+                                            <input type="tel" class="form-control" id="phone">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="subject" class="form-label">Subjek *</label>
+                                        <select class="form-select" id="subject" required>
+                                            <option value="">Pilih Subjek</option>
+                                            <option value="produk">Pertanyaan Produk</option>
+                                            <option value="pesanan">Status Pesanan</option>
+                                            <option value="kerjasama">Kerjasama Bisnis</option>
+                                            <option value="keluhan">Keluhan</option>
+                                            <option value="lainnya">Lainnya</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="message" class="form-label">Pesan *</label>
+                                        <textarea class="form-control" id="message" rows="5" required placeholder="Tulis pesan Anda di sini..."></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        <i class="bi bi-send me-2"></i>Kirim Pesan
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Follow Us</h5>
-                        <div class="social-links">
-                            <a href="#" class="btn btn-outline-primary me-2">Facebook</a>
-                            <a href="#" class="btn btn-outline-info me-2">Twitter</a>
-                            <a href="#" class="btn btn-outline-danger me-2">Instagram</a>
-                            <a href="#" class="btn btn-outline-success">WhatsApp</a>
+                    <!-- Contact Info -->
+                    <div class="col-lg-4">
+                        <div class="card border-0 shadow mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="card-title mb-4">
+                                    <i class="bi bi-geo-alt text-primary me-2"></i>Alamat Toko
+                                </h5>
+                                <p class="mb-0">
+                                    Jl. Batik Indonesia No. 123<br>
+                                    Jakarta Pusat, DKI Jakarta<br>
+                                    Indonesia 10110
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card border-0 shadow mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="card-title mb-4">
+                                    <i class="bi bi-telephone text-primary me-2"></i>Kontak
+                                </h5>
+                                <p class="mb-2">
+                                    <strong>Telepon:</strong><br>
+                                    +62 21 1234 5678
+                                </p>
+                                <p class="mb-2">
+                                    <strong>WhatsApp:</strong><br>
+                                    +62 812 3456 7890
+                                </p>
+                                <p class="mb-0">
+                                    <strong>Email:</strong><br>
+                                    info@batikindonesia.com
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card border-0 shadow mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="card-title mb-4">
+                                    <i class="bi bi-clock text-primary me-2"></i>Jam Operasional
+                                </h5>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="mb-1"><strong>Senin - Jumat</strong></p>
+                                        <p class="mb-3 text-muted">09:00 - 18:00</p>
+                                        <p class="mb-1"><strong>Sabtu</strong></p>
+                                        <p class="mb-3 text-muted">09:00 - 15:00</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="mb-1"><strong>Minggu</strong></p>
+                                        <p class="mb-0 text-muted">Tutup</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card border-0 shadow">
+                            <div class="card-body p-4">
+                                <h5 class="card-title mb-4">
+                                    <i class="bi bi-share text-primary me-2"></i>Media Sosial
+                                </h5>
+                                <div class="d-flex gap-3">
+                                    <a href="#" class="btn btn-outline-primary btn-sm">
+                                        <i class="bi bi-facebook"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">
+                                        <i class="bi bi-instagram"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">
+                                        <i class="bi bi-twitter"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">
+                                        <i class="bi bi-youtube"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+    </main>
 
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Send Us a Message</h5>
-                        <form id="contactForm">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="name" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email Address</label>
-                                <input type="email" class="form-control" id="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="phone" class="form-label">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone">
-                            </div>
-                            <div class="mb-3">
-                                <label for="subject" class="form-label">Subject</label>
-                                <select class="form-select" id="subject" required>
-                                    <option value="">Select a subject</option>
-                                    <option value="product">Product Inquiry</option>
-                                    <option value="order">Order Status</option>
-                                    <option value="custom">Custom Order</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>Batik Indonesia</h5>
-                    <p>Melestarikan warisan batik Indonesia melalui produk berkualitas dan pendidikan.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Tautan Cepat</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="about.html" class="text-white">Tentang Kami</a></li>
-                        <li><a href="products.html" class="text-white">Produk</a></li>
-                        <li><a href="contact.html" class="text-white">Kontak</a></li>
-                        <li><a href="admin.html" class="text-white">Admin</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Hubungi Kami</h5>
-                    <p>Email: info@batikindonesia.com<br>
-                    Telepon: +62 123 456 7890</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/cart-simple.js"></script>
+    <script src="js/components.js"></script>
     <script>
-        // Form submission handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Pesan Anda telah terkirim. Terima kasih telah menghubungi kami!');
-            this.reset();
+        // Load komponen halaman
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navbar, header, dan footer
+            loadComponents('contact', 'Hubungi Kami', 'Kami siap membantu Anda dengan pertanyaan dan kebutuhan batik');
+            
+            // Handle form submission
+            document.getElementById('contactForm').addEventListener('submit', handleFormSubmit);
         });
+
+        // Handle form submission
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if (!firstName || !lastName || !email || !subject || !message) {
+                alert('Mohon lengkapi semua field yang wajib diisi (*)');
+                return;
+            }
+            
+            // Simulate form submission
+            alert(`Terima kasih ${firstName}!\n\nPesan Anda telah dikirim. Kami akan merespons dalam 1x24 jam melalui email: ${email}`);
+            
+            // Reset form
+            document.getElementById('contactForm').reset();
+        }
     </script>
 </body>
-</html> 
+</html>

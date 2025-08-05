@@ -4,143 +4,203 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produk - Batik Indonesia</title>
+    
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigasi -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Batik Indonesia</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">Tentang Batik</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="products.html">Produk</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="regions.html">Daerah</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Kontak</a>
-                    </li>
-                </ul>
-                <div class="d-flex align-items-center">
-                    <a href="cart.html" class="btn btn-outline-light position-relative me-2">
-                        <i class="bi bi-cart"></i>
-                        <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">
-                            0
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
 
-    <!-- Products Content -->
-    <div class="container my-5">
-        <!-- Notification Container -->
-        <div id="notificationContainer" class="position-fixed top-0 end-0 p-3" style="z-index: 1050; margin-top: 60px;"></div>
-        
-        <h1 class="text-center mb-4">Koleksi Batik Kami</h1>
-        
-        <!-- Search and Filter Section -->
-        <div class="row g-3 mb-4">
-            <div class="col-lg-4 col-md-6">
-                <div class="input-group">
-                    <span class="input-group-text bg-white">
-                        <i class="bi bi-search"></i>
-                    </span>
-                    <input type="text" class="form-control" id="searchInput" placeholder="Cari produk...">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <select class="form-select" id="regionFilter">
-                    <option value="">Semua Daerah</option>
-                    <option value="Solo">Solo</option>
-                    <option value="Yogyakarta">Yogyakarta</option>
-                    <option value="Pekalongan">Pekalongan</option>
-                    <option value="Cirebon">Cirebon</option>
-                    <option value="Madura">Madura</option>
-                </select>
-            </div>
-            <div class="col-lg-4 col-md-12">
-                <select class="form-select" id="priceFilter">
-                    <option value="">Rentang Harga</option>
-                    <option value="low">Di bawah Rp 500.000</option>
-                    <option value="medium">Rp 500.000 - Rp 1.000.000</option>
-                    <option value="high">Di atas Rp 1.000.000</option>
-                </select>
-            </div>
-        </div>
+    <!-- Header Container -->
+    <div id="header-container"></div>
 
-        <!-- Products Grid -->
-        <div class="products-grid">
-            <div class="row g-4">
-                <!-- Products will be dynamically inserted here by JavaScript -->
+    <main>
+        <!-- Filter Section -->
+        <section class="py-4 bg-white border-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center">
+                            <label for="categoryFilter" class="form-label me-3 mb-0">Filter Kategori:</label>
+                            <select id="categoryFilter" class="form-select" style="width: auto;">
+                                <option value="">Semua Kategori</option>
+                                <option value="Solo">Batik Solo</option>
+                                <option value="Yogyakarta">Batik Yogyakarta</option>
+                                <option value="Pekalongan">Batik Pekalongan</option>
+                                <option value="Cirebon">Batik Cirebon</option>
+                                <option value="Madura">Batik Madura</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-md-end">
+                            <label for="sortBy" class="form-label me-3 mb-0">Urutkan:</label>
+                            <select id="sortBy" class="form-select" style="width: auto;">
+                                <option value="name">Nama A-Z</option>
+                                <option value="price-low">Harga Terendah</option>
+                                <option value="price-high">Harga Tertinggi</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <!-- Navigation Buttons -->
-            <div class="d-flex justify-content-center align-items-center mt-4 mb-4">
-                <nav aria-label="Product navigation">
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <button class="page-link" id="prevPage" aria-label="Previous">
-                                <span aria-hidden="true">&lt;</span>
-                            </button>
-                        </li>
-                        <li class="page-item active"><button class="page-link" data-page="1">1</button></li>
-                        <li class="page-item"><button class="page-link" data-page="2">2</button></li>
-                        <li class="page-item"><button class="page-link" data-page="3">3</button></li>
-                        <li class="page-item">
-                            <button class="page-link" id="nextPage" aria-label="Next">
-                                <span aria-hidden="true">&gt;</span>
-                            </button>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>Batik Indonesia</h5>
-                    <p>Melestarikan warisan batik Indonesia melalui produk berkualitas dan pendidikan.</p>
+        <!-- Products Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row" id="productsContainer">
+                    <!-- Produk akan dimuat dari JavaScript -->
                 </div>
-                <div class="col-md-4">
-                    <h5>Tautan Cepat</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="about.html" class="text-white">Tentang Kami</a></li>
-                        <li><a href="products.html" class="text-white">Produk</a></li>
-                        <li><a href="contact.html" class="text-white">Kontak</a></li>
-                        <li><a href="admin.html" class="text-white">Admin</a></li>
-                    </ul>
+                
+                <!-- Loading indicator -->
+                <div id="loadingIndicator" class="text-center py-4" style="display: none;">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-2">Memuat produk...</p>
                 </div>
-                <div class="col-md-4">
-                    <h5>Hubungi Kami</h5>
-                    <p>Email: info@batikindonesia.com<br>
-                    Telepon: +62 123 456 7890</p>
+                
+                <!-- No products message -->
+                <div id="noProductsMessage" class="text-center py-5" style="display: none;">
+                    <i class="bi bi-search display-1 text-muted"></i>
+                    <h3 class="mt-3">Tidak ada produk ditemukan</h3>
+                    <p class="text-muted">Coba ubah filter atau kata kunci pencarian</p>
                 </div>
             </div>
-        </div>
-    </footer>
+        </section>
+    </main>
 
-    <script src="js/api.js"></script>
-    <script src="js/cart-db.js"></script>
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/products.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/cart-simple.js"></script>
+    <script src="js/components.js"></script>
+    <script>
+        let currentProducts = [];
+        
+        // Load komponen halaman
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navbar, header, dan footer
+            loadComponents('products', 'Koleksi Produk Batik', 'Temukan berbagai macam batik berkualitas dari seluruh Indonesia');
+            
+            // Load produk
+            loadProducts();
+            
+            // Event listeners
+            document.getElementById('categoryFilter').addEventListener('change', filterProducts);
+            document.getElementById('sortBy').addEventListener('change', sortProducts);
+        });
+        
+        // Load semua produk
+        function loadProducts() {
+            const container = document.getElementById('productsContainer');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const noProductsMessage = document.getElementById('noProductsMessage');
+            
+            loadingIndicator.style.display = 'block';
+            container.innerHTML = '';
+            noProductsMessage.style.display = 'none';
+            
+            setTimeout(() => {
+                currentProducts = [...window.productsData];
+                displayProducts(currentProducts);
+                loadingIndicator.style.display = 'none';
+            }, 500);
+        }
+        
+        // Tampilkan produk
+        function displayProducts(products) {
+            const container = document.getElementById('productsContainer');
+            const noProductsMessage = document.getElementById('noProductsMessage');
+            
+            if (products.length === 0) {
+                container.innerHTML = '';
+                noProductsMessage.style.display = 'block';
+                return;
+            }
+            
+            noProductsMessage.style.display = 'none';
+            
+            const productsHTML = products.map(product => `
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">${product.name}</h5>
+                            <p class="card-text flex-grow-1">${product.description}</p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="price-tag">${formatPrice(product.price)}</span>
+                                    <small class="text-muted">${product.category}</small>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <button class="btn btn-primary" onclick="addToCart(${product.id})">
+                                        <i class="bi bi-cart-plus me-1"></i>Tambah
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            container.innerHTML = productsHTML;
+        }
+        
+        // Filter produk
+        function filterProducts() {
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            let filteredProducts = [...window.productsData];
+            
+            if (categoryFilter) {
+                filteredProducts = filteredProducts.filter(product => 
+                    product.category === categoryFilter
+                );
+            }
+            
+            currentProducts = filteredProducts;
+            sortProducts();
+        }
+        
+        // Urutkan produk
+        function sortProducts() {
+            const sortBy = document.getElementById('sortBy').value;
+            
+            switch (sortBy) {
+                case 'name':
+                    currentProducts.sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+                case 'price-low':
+                    currentProducts.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high':
+                    currentProducts.sort((a, b) => b.price - a.price);
+                    break;
+            }
+            
+            displayProducts(currentProducts);
+        }
+        
+        // Tambah ke keranjang
+        function addToCart(productId) {
+            window.cart.addToCart(productId, 1);
+        }
+    </script>
 </body>
-</html> 
+</html>
