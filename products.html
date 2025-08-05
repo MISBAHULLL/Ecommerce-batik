@@ -234,8 +234,8 @@
         function showNotification(message) {
             const notification = document.createElement('div');
             notification.className = 'alert alert-success position-fixed';
-            notification.style.cssText = 'top: 100px; right: 20px; z-index: 9999; min-width: 300px;';
-            notification.textContent = message;
+            notification.style.cssText = 'top: 100px; right: 20px; z-index: 9999; min-width: 300px; max-width: 400px;';
+            notification.innerHTML = `<i class="bi bi-check-circle-fill me-2"></i>${message}`;
             
             document.body.appendChild(notification);
             

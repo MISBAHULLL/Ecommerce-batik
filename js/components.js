@@ -38,10 +38,12 @@ function createNavbar(activePage = '') {
                 </ul>
                 
                 <div class="d-flex align-items-center ms-3">
-                    <a href="cart.html" class="btn btn-outline-light position-relative me-2">
-                        <i class="bi bi-cart3"></i>
-                        <span class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">0</span>
-                    </a>
+                    <div class="position-relative me-2">
+                        <a href="cart.html" class="btn btn-outline-light">
+                            <i class="bi bi-cart3"></i>
+                        </a>
+                        <span class="cart-count" style="display: none;">0</span>
+                    </div>
                     <div class="dropdown">
                         <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
                             <i class="bi bi-person-circle"></i>
