@@ -22,22 +22,24 @@
     <main>
         <!-- Cart Content -->
         <section class="py-5">
-            <div class="container">
-                <div class="row">
+            <div class="container position-relative">
+                <!-- Empty Cart Message (Full Width) -->
+                <div id="emptyCart" class="position-fixed top-50 start-50 translate-middle" style="display: none; z-index: 1000;">
+                    <div class="text-center">
+                        <i class="bi bi-cart-x" style="font-size: 8rem; color: #dee2e6; margin-bottom: 2rem;"></i>
+                        <h3 class="mb-3">Keranjang Belanja Kosong</h3>
+                        <p class="text-muted mb-4">Belum ada produk di keranjang belanja Anda</p>
+                        <a href="products.html" class="btn btn-primary btn-lg">
+                            <i class="bi bi-bag me-2"></i>Mulai Belanja
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row" id="cartRow">
                     <!-- Cart Items -->
                     <div class="col-lg-8">
                         <div id="cartItems">
                             <!-- Item keranjang akan dimuat dari JavaScript -->
-                        </div>
-                        
-                        <!-- Empty Cart Message -->
-                        <div id="emptyCart" class="text-center py-5" style="display: none;">
-                            <i class="bi bi-cart-x display-1 text-muted"></i>
-                            <h3 class="mt-3">Keranjang Belanja Kosong</h3>
-                            <p class="text-muted mb-4">Belum ada produk di keranjang belanja Anda</p>
-                            <a href="products.html" class="btn btn-primary">
-                                <i class="bi bi-bag me-2"></i>Mulai Belanja
-                            </a>
                         </div>
                     </div>
                     
@@ -106,15 +108,19 @@
             const emptyCart = document.getElementById('emptyCart');
             const cartSummary = document.getElementById('cartSummary');
             
+            const cartRow = document.getElementById('cartRow');
+            
             if (cartItems.length === 0) {
                 cartContainer.innerHTML = '';
-                emptyCart.style.display = 'block';
+                emptyCart.style.display = 'flex';
                 cartSummary.style.display = 'none';
+                cartRow.style.display = 'none';
                 return;
             }
             
             emptyCart.style.display = 'none';
             cartSummary.style.display = 'block';
+            cartRow.style.display = 'flex';
             
             const itemsHTML = cartItems.map(item => `
                 <div class="card mb-3">

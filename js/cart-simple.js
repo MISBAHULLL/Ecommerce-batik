@@ -19,7 +19,8 @@ class SimpleCart {
     saveCart(cart) {
         try {
             localStorage.setItem(this.cartKey, JSON.stringify(cart));
-            this.updateCartCount(); // Update tampilan counter
+            // Update tampilan counter langsung
+            this.updateCartCount();
         } catch (error) {
             console.error('Error saving cart:', error);
         }
@@ -93,11 +94,18 @@ class SimpleCart {
     // Update tampilan counter keranjang
     updateCartCount() {
         const totalItems = this.getTotalItems();
-        const cartCountElements = document.querySelectorAll('.cart-count');
+        const cartCountElements = document.querySelectorAll('.cart-count, #cartCount');
         
         cartCountElements.forEach(element => {
-            element.textContent = totalItems;
-            element.style.display = totalItems > 0 ? 'inline-block' : 'none';
+            if (totalItems > 0) {
+                element.textContent = totalItems;
+                element.style.display = 'inline-block';
+                element.style.visibility = 'visible';
+            } else {
+                element.style.display = 'none';
+                element.style.visibility = 'hidden';
+                element.textContent = '';
+            }
         });
     }
 
@@ -131,5 +139,20 @@ window.cart = new SimpleCart();
 
 // Update cart count saat halaman dimuat
 document.addEventListener('DOMContentLoaded', function() {
+    // Update cart count langsung
     window.cart.updateCartCount();
+});
+
+// Update cart count saat halaman menjadi visible (untuk handle tab switching)
+document.addEventListener('visibilitychange', function() {
+    if (!document.hidden && window.cart) {
+        window.cart.updateCartCount();
+    }
+});
+
+// Update cart count saat window focus (untuk handle window switching)
+window.addEventListener('focus', function() {
+    if (window.cart) {
+        window.cart.updateCartCount();
+    }
 });

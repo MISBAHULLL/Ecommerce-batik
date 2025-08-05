@@ -42,7 +42,7 @@ function createNavbar(activePage = '') {
                         <a href="cart.html" class="btn btn-outline-light">
                             <i class="bi bi-cart3"></i>
                         </a>
-                        <span class="cart-count" style="display: none;">0</span>
+                        <span class="cart-count position-absolute badge rounded-pill bg-danger" style="display: none; top: -8px; right: -8px; z-index: 1040;"></span>
                     </div>
                     <div class="dropdown">
                         <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
@@ -155,6 +155,11 @@ function loadComponents(activePage, headerTitle = '', headerSubtitle = '') {
     const navbarContainer = document.getElementById('navbar-container');
     if (navbarContainer) {
         navbarContainer.innerHTML = createNavbar(activePage);
+        
+        // Update cart count langsung setelah navbar dimuat
+        if (window.cart) {
+            window.cart.updateCartCount();
+        }
     }
     
     // Load page header (kecuali untuk home page)
